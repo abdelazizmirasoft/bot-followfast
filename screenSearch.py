@@ -51,9 +51,10 @@ def likePost(pathFFStep1,pathFFStep2, pathLikeWebsite, postName):
           prevTab()
           time.sleep(randint(1,4))
           pyautogui.click(posLike[0],posLike[1])
-          time.sleep(2)
+          time.sleep(randint(1,2))
           posStopTabBrave = pyautogui.locateCenterOnScreen('buttons/stopTab.PNG')
-          pyautogui.click(posStopTabBrave[0],posStopTabBrave[1])
+          if posStopTabBrave != None:
+              pyautogui.click(posStopTabBrave[0],posStopTabBrave[1])
           nextTab()
           print (postName+" Yes!")
           time.sleep(randint(13,18))
@@ -129,7 +130,8 @@ while True:
                     pyautogui.click(posTweet[0],posTweet[1]+15)
                     time.sleep(1)
                     posStopTabBrave = pyautogui.locateCenterOnScreen('buttons/stopTab.PNG')
-                    pyautogui.click(posStopTabBrave[0],posStopTabBrave[1])
+                    if posStopTabBrave != None:
+                        pyautogui.click(posStopTabBrave[0],posStopTabBrave[1])
                     #nextTab()
                     nextTab()
                     time.sleep(randint(9,15))
@@ -159,7 +161,7 @@ while True:
                 time.sleep(15)
     #switchWindow()
     #print ("switch window")
-    if loop == 2:
+    if loop == 4:
         timeSleep = randint(1100,1500)
         print("Sleep time:"+str(timeSleep/60)+"min Since: "+str(datetime.datetime.now().time()))
         keyboard1.press(Key.f5)
