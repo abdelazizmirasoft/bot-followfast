@@ -90,7 +90,7 @@ while True:
     pyautogui.click(470,10)
     time.sleep(1)
     pyautogui.click(470,10)
-    if loop == 2:
+    if loop == 4:
         loop = 0
     else:
         loop += 1 
