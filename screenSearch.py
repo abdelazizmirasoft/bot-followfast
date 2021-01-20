@@ -45,7 +45,7 @@ def likePost(pathFFStep1,pathFFStep2, pathLikeWebsite, postName):
     pos49 = pyautogui.locateCenterOnScreen(pathFFStep1)
     posLike = pyautogui.locateCenterOnScreen(pathFFStep2)
     index = 0
-    while pos49 != None and posLike != None and index < 20:
+    while pos49 != None and posLike != None and index < 10:
           index += 1
           pyautogui.click(posLike[0],posLike[1])
           prevTab()
@@ -144,6 +144,7 @@ while True:
                         typeChar(alphabet[randint(0,26)])
                         typeChar(alphabet[randint(0,26)])
                         typeChar(alphabet[randint(0,26)])
+                        posTweetTweeter = pyautogui.locateCenterOnScreen('buttons/TweetTweeter.PNG')
                         pyautogui.click(posTweetTweeter[0],posTweetTweeter[1])
                         time.sleep(randint(9,15))
                     closeTab()
@@ -154,15 +155,16 @@ while True:
                     time.sleep(randint(12,16))
                     posTweet = pyautogui.locateCenterOnScreen('buttons/49Tweet.PNG')
             if b == 'LikeTweetList.PNG':
-                likePost('buttons/49LikeTweet.PNG','buttons/LikeTweetFollowFast.PNG', 'buttons/LikeTweeter.PNG', "LikeTweeter")
-                time.sleep(15)
+                #likePost('buttons/49LikeTweet.PNG','buttons/LikeTweetFollowFast.PNG', 'buttons/LikeTweeter.PNG', "LikeTweeter")
+                time.sleep(3)
             if b == 'RetweetList.PNG':
                 pyautogui.click(pos[0],pos[1])
                 time.sleep(15)
     #switchWindow()
     #print ("switch window")
     if loop == 4:
-        timeSleep = randint(1100,1500)
+##        timeSleep = randint(1100,1500)
+        timeSleep = randint(720,1020)
         print("Sleep time:"+str(timeSleep/60)+"min Since: "+str(datetime.datetime.now().time()))
         keyboard1.press(Key.f5)
         keyboard1.release(Key.f5)
